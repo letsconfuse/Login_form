@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    /* background-color: rgba(0,0,0,.2); */
+    /* backdrop-filter: blur(50px); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image:linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .2)), url(07.webp);
+    background-position: fill;
+    background-size: 100%;
+}
+
+.CompanyName{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;    
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .3s;
+    transform-origin: right;
+}
+
+
+.navigation a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+    /* font-size: 100%;
+    transition: all 500ms;
+    font-size-adjust: 0px; */
+}
+
+.navigation .loginpopup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation .loginpopup:hover{
+    background: #fff;
+    color: #162938;
+    transform: scale(1.0, 1.0);
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+}
+
+.wrapper{
+    position: relative;
+    opacity: 0;
+    width: 500px;
+    height: 540px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0.99);
+    transition: opacity 0.3s ease, transform .3s ease, height .2s ease;
+}
+
+.wrapper.activepopup{
+    transform: scale(1);
+    transition: opacity 0.3 ease;
+    opacity: 1;
+}
+
+.wrapper.active{
+    height: 620px;
+}
+
+.wrapper .formbox{
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .formbox{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .formbox{
+    transition: none;
+    transform: translateX(-500px);
+}
+
+.wrapper .formboxregister{
+    position: absolute;
+    transition: none;
+    transform: translateX(500px);
+}
+
+.wrapper.active .formboxregister{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .iconclose{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #000000;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.wrapper .formboxregister{
+    position: absolute;
+    transform: translateX(500px);
+}
+
+.formbox h2{
+    font-size: 2.2em;
+    color: #000000;
+    text-align: center;
+}
+
+.formboxregister h2{
+    font-size: 2.2em;
+    color: #000000;
+    text-align: center;
+}
+
+.inputbox{     /* line undertext */
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #000000;
+    margin: 40px 0;
+}
+
+.formboxregister .inputbox{
+    position: relative;
+    width: 410px;
+    height: 50px;
+    border-bottom: 2px solid #000000;
+    margin: 40px 0;
+}
+
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1.0em;
+    color: #000000;
+    font-weight: 600;
+    pointer-events: none;
+    transition: .2s;
+    
+}
+
+.inputbox input:focus~label,
+.inputbox input:valid~label{
+    top: -5px;
+}
+
+.inputbox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #000000;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.inputbox .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #000000;
+    line-height: 57px;
+}
+
+.rememberforget{
+    font-size: .9em;
+    color: #000000;
+    font-weight: 600;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rememberforget label input{
+    accent-color: #000000;
+    margin-right: 3px;
+}
+
+.rememberforget a{
+    color: #000000;
+    text-decoration: none;
+}
+
+.rememberforget a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #000000;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.btn:hover{
+    background: #b5b5b5;
+    color: #000000;
+    transform: scale(1.0, 1.0);
+    transition-timing-function: ease-out;
+    transition-duration: 300ms;
+}
+
+
+.loginregister{
+    font-size: .9em;
+    color: #000000;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.loginregister p a{
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.loginregister p a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styles for the Forgot Password Modal */
+#forgot-password-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: #000 2px solid;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex; /* Initially hidden */
+    z-index: 100; /* Ensure it's above other content */
+    overflow: hidden;
+}
+
+#forgot-password-modal h2 {
+    font-size: 1.8em;
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#forgot-password-modal p {
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#forgot-password-modal .inputbox {
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+/* Styles for the Close Button in the Forgot Password Modal */
+#close-forgot-password-modal {
+    /* position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #333; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #000000;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Styles for the Submit Button in the Forgot Password Modal */
+#submit-forgot-password {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-forgot-password:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+

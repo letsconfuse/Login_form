@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header>
+        <h2 class="CompanyName">A. D. PATEL INSTITUTE OF TECHNOLOGY</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Service</a>
+            <a href="#">Catlog</a>
+            <a href="#">Contact</a>
+            <button class="loginpopup">Login</button>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <span class="iconclose">
+            <ion-icon name="close-outline"></ion-icon>
+        </span>
+        <div class="formbox">
+            <h2>Login</h2>
+            <form action="" class="form">
+                <div class="inputbox">
+                    <span class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <input type="text" name="username_or_email" required>
+                    <label>Email or Username</label>
+                </div>
+                <div class="inputbox">
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <!-- <div class="rememberforget">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forget Password?</a>
+                </div> -->
+
+                <!-- Inside your login form -->
+                <div class="rememberforget">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#" id="forgot-password-link">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn">Login</button>            
+                <div class="loginregister">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>    
+
+        <div class="formboxregister">
+            <h2>Registration</h2>
+            <form action="" class="form">
+                <div class="inputbox">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+
+                <div class="inputbox">
+                    <span class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="inputbox">
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                
+                <div class="rememberforget">
+                    <label><input type="checkbox"> Agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>            
+                <div class="loginregister">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a>
+                    </p>
+                </div>
+            </form>
+        </div>  
+
+        <div id="forgot-password-modal" class="modal">
+            <div class="modal-content">
+                <span class="iconclose">
+                    <ion-icon name="close-outline" id="close-forgot-password-modal"></ion-icon>
+                </span>
+                <h2>Forgot Password</h2>
+                <p>Enter your email address to reset your password:</p>
+                <form action="#" class="form">
+                    <div class="inputbox">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <button type="submit" class="btn">Reset Password</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
